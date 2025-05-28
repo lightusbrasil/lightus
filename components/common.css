@@ -1,0 +1,36 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: "manrope", sans-serif;
+    font-size: 15px;
+    color: #333;
+}
+
+header * {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    background-color: inherit;
+    color: inherit;
+}
+
+footer * {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    background-color: inherit;
+    color: inherit;
+}
+
+a, a * {
+    transition: color 0.5s ease;
+    text-decoration: none;
+}
+
+    a:hover,
+    a:hover * {
+        color: #d3a303;
+        text-decoration: none;
+    }
