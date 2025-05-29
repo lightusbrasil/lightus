@@ -1,25 +1,25 @@
-// Variáveis globais acessíveis
+// VariÃ¡veis globais acessÃ­veis
 const blogUrl = 'https://lightusbrasil.blogspot.com/';
-// max-results ajustado para 6 para obter os posts necessários
+// max-results ajustado para 6 para obter os posts necessÃ¡rios
 const feedUrl = blogUrl + 'feeds/posts/default?alt=json-in-script&callback=showBloggerPosts&max-results=6&orderby=published&order=desc';
-const insightsPageUrl = '/pages/insights/';
+const insightsPageUrl = '/lightus/pages/insights/';
 
-// Referências aos elementos DOM (assumindo que o script é carregado após o HTML ou que o ambiente lida com isso)
-// ATENÇÃO: 'carousel' neste contexto é o contêiner dos posts do carrossel, NÃO o elemento a ser limpo diretamente.
+// ReferÃªncias aos elementos DOM (assumindo que o script Ã© carregado apÃ³s o HTML ou que o ambiente lida com isso)
+// ATENÃ‡ÃƒO: 'carousel' neste contexto Ã© o contÃªiner dos posts do carrossel, NÃƒO o elemento a ser limpo diretamente.
 const mainPostContainer = document.getElementById('main-post');
 const secondaryPostsContainer = document.getElementById('secondary-posts');
 const secondaryPostsElements = secondaryPostsContainer ? secondaryPostsContainer.querySelectorAll('.blogger-post.secondary') : [];
 const sidebarPostsList = document.getElementById('sidebar-posts');
 
 
-// Função para extrair o postId do objeto post do Blogger
+// FunÃ§Ã£o para extrair o postId do objeto post do Blogger
 function getPostId(post) {
     const fullId = post.id.$t;
     const postId = fullId.split('post-')[1];
     return postId;
 }
 
-// Função para criar o HTML de um post principal/secundário para o CAROUSEL
+// FunÃ§Ã£o para criar o HTML de um post principal/secundÃ¡rio para o CAROUSEL
 const createCarouselPostHTML = (post, isMain = false) => {
     if (!post) return '';
 
@@ -46,7 +46,7 @@ const createCarouselPostHTML = (post, isMain = false) => {
     `;
 };
 
-// Função para renderizar os posts "Resultado na Prática" na sidebar
+// FunÃ§Ã£o para renderizar os posts "Resultado na PrÃ¡tica" na sidebar
 function renderSidebarPostsList(postsToRender) {
     if (!sidebarPostsList) return;
 
@@ -64,32 +64,32 @@ function renderSidebarPostsList(postsToRender) {
     }).join('');
 }
 
-// Função global que será chamada pelo JSONP (o callback do Blogger)
+// FunÃ§Ã£o global que serÃ¡ chamada pelo JSONP (o callback do Blogger)
 window.showBloggerPosts = function (data) {
     try {
         const posts = data.feed.entry || [];
         console.log("Total de posts recebidos:", posts.length); // DEBUG
 
         if (posts.length < 6) {
-            console.warn('Não há posts suficientes para preencher todas as seções (mínimo de 6 posts necessários). Atualmente: ' + posts.length);
+            console.warn('NÃ£o hÃ¡ posts suficientes para preencher todas as seÃ§Ãµes (mÃ­nimo de 6 posts necessÃ¡rios). Atualmente: ' + posts.length);
         }
 
-        // --- CORREÇÃO: Limpar o CONTEÚDO dos elementos específicos, não o elemento pai que contém eles ---
+        // --- CORREÃ‡ÃƒO: Limpar o CONTEÃšDO dos elementos especÃ­ficos, nÃ£o o elemento pai que contÃ©m eles ---
         if (mainPostContainer) mainPostContainer.innerHTML = '';
-        if (secondaryPostsElements.length > 0) { // Limpa o primeiro secundário
+        if (secondaryPostsElements.length > 0) { // Limpa o primeiro secundÃ¡rio
             secondaryPostsElements[0].innerHTML = '';
         }
-        if (secondaryPostsElements.length > 1) { // Limpa o segundo secundário
+        if (secondaryPostsElements.length > 1) { // Limpa o segundo secundÃ¡rio
             secondaryPostsElements[1].innerHTML = '';
         }
-        if (sidebarPostsList) sidebarPostsList.innerHTML = ''; // Este já estava correto
+        if (sidebarPostsList) sidebarPostsList.innerHTML = ''; // Este jÃ¡ estava correto
 
         // --- Renderizar posts do Carrossel ---
-        // Último post (índice 0)
+        // Ãšltimo post (Ã­ndice 0)
         const firstPost = posts[0] || null;
-        // Penúltimo post (índice 1)
+        // PenÃºltimo post (Ã­ndice 1)
         const secondPost = posts[1] || null;
-        // Antepenúltimo post (índice 2)
+        // AntepenÃºltimo post (Ã­ndice 2)
         const thirdPost = posts[2] || null;
 
         console.log("Post 1 (main):", firstPost); // DEBUG
@@ -99,37 +99,37 @@ window.showBloggerPosts = function (data) {
         if (mainPostContainer) {
             mainPostContainer.innerHTML = createCarouselPostHTML(firstPost, true);
         } else {
-            console.warn("mainPostContainer não encontrado!"); // DEBUG
+            console.warn("mainPostContainer nÃ£o encontrado!"); // DEBUG
         }
 
         if (secondaryPostsElements.length > 0) {
             secondaryPostsElements[0].innerHTML = createCarouselPostHTML(secondPost);
         } else {
-             console.warn("secondaryPostsElements[0] não encontrado ou container vazio!"); // DEBUG
+             console.warn("secondaryPostsElements[0] nÃ£o encontrado ou container vazio!"); // DEBUG
         }
 
         if (secondaryPostsElements.length > 1) {
             secondaryPostsElements[1].innerHTML = createCarouselPostHTML(thirdPost);
         } else {
-             console.warn("secondaryPostsElements[1] não encontrado ou container insuficiente!"); // DEBUG
+             console.warn("secondaryPostsElements[1] nÃ£o encontrado ou container insuficiente!"); // DEBUG
         }
 
-        // --- Renderizar posts "Resultado na Prática" na sidebar (4º, 5º e 6º posts) ---
-        const postsForSidebar = posts.slice(3, 6); // Pega os posts do índice 3 ao 5
+        // --- Renderizar posts "Resultado na PrÃ¡tica" na sidebar (4Âº, 5Âº e 6Âº posts) ---
+        const postsForSidebar = posts.slice(3, 6); // Pega os posts do Ã­ndice 3 ao 5
         renderSidebarPostsList(postsForSidebar);
         console.log("Posts para Sidebar:", postsForSidebar); // DEBUG
 
     } catch (error) {
         console.error('Erro ao processar posts:', error);
-        // Exibir mensagem de erro nos contêineres principais
+        // Exibir mensagem de erro nos contÃªineres principais
         if (mainPostContainer) mainPostContainer.innerHTML = '<div class="error-message">Erro ao exibir posts.</div>';
         if (secondaryPostsElements.length > 0) secondaryPostsElements[0].innerHTML = '<div class="error-message">Erro.</div>';
         if (secondaryPostsElements.length > 1) secondaryPostsElements[1].innerHTML = '<div class="error-message">Erro.</div>';
-        if (sidebarPostsList) sidebarPostsList.innerHTML = '<div class="error-message">Erro ao carregar notícias.</div>';
+        if (sidebarPostsList) sidebarPostsList.innerHTML = '<div class="error-message">Erro ao carregar notÃ­cias.</div>';
     }
 };
 
-// Função para buscar dados do blog (similar ao seu exemplo)
+// FunÃ§Ã£o para buscar dados do blog (similar ao seu exemplo)
 function fetchBlogData(callback) {
     const script = document.createElement('script');
     script.src = `${blogUrl}feeds/posts/default?alt=json-in-script&callback=${callback}&max-results=6&orderby=published&order=desc`;
@@ -137,19 +137,19 @@ function fetchBlogData(callback) {
 
     // Tratamento de erro para falha no carregamento do script
     script.onerror = function () {
-        // Exibir mensagem de erro nos contêineres principais
-        if (mainPostContainer) mainPostContainer.innerHTML = '<div class="error-message">Erro ao carregar o feed de notícias.</div>';
+        // Exibir mensagem de erro nos contÃªineres principais
+        if (mainPostContainer) mainPostContainer.innerHTML = '<div class="error-message">Erro ao carregar o feed de notÃ­cias.</div>';
         if (secondaryPostsElements.length > 0) secondaryPostsElements[0].innerHTML = '<div class="error-message">Erro.</div>';
         if (secondaryPostsElements.length > 1) secondaryPostsElements[1].innerHTML = '<div class="error-message">Erro.</div>';
-        if (sidebarPostsList) sidebarPostsList.innerHTML = '<div class="error-message">Erro ao carregar o feed de notícias.</div>';
+        if (sidebarPostsList) sidebarPostsList.innerHTML = '<div class="error-message">Erro ao carregar o feed de notÃ­cias.</div>';
     };
 }
 
-// === Chamada de função para iniciar o processo no final do script ===
+// === Chamada de funÃ§Ã£o para iniciar o processo no final do script ===
 // Exibir mensagem de carregamento imediatamente
-if (mainPostContainer) mainPostContainer.innerHTML = '<div class="loading-message">Carregando notícia principal...</div>';
+if (mainPostContainer) mainPostContainer.innerHTML = '<div class="loading-message">Carregando notÃ­cia principal...</div>';
 if (secondaryPostsElements.length > 0) secondaryPostsElements[0].innerHTML = '<div class="loading-message">Carregando...</div>';
 if (secondaryPostsElements.length > 1) secondaryPostsElements[1].innerHTML = '<div class="loading-message">Carregando...</div>';
-if (sidebarPostsList) sidebarPostsList.innerHTML = '<div class="loading-message">Carregando notícias da sidebar...</div>';
+if (sidebarPostsList) sidebarPostsList.innerHTML = '<div class="loading-message">Carregando notÃ­cias da sidebar...</div>';
 
 fetchBlogData('showBloggerPosts');
