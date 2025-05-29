@@ -1,28 +1,20 @@
 (function () {
     const head = document.head || document.getElementsByTagName('head')[0];
 
-    // Insere <base href="/lightus/"> se ainda nÃ£o houver
+    // Insere <base href="/lightus/"> se ainda não houver
     if (!document.querySelector('base')) {
         const base = document.createElement('base');
         base.href = '/lightus/';
         head.prepend(base);
     }
 
-    const assets = [
-        'components/common.css',
-        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap',
-        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
-        // Adicione o favicon aqui (ajuste o caminho conforme necessÃ¡rio)
-        'favicon.ico'
-        // Pode adicionar mais CSS, JS ou favicon aqui
-    ];
-
-    assets.forEach(path => {
+    // Função para adicionar um recurso ao head, evitando duplicação
+    function addAsset(path) {
         const isCSS = path.endsWith('.css') || path.includes('fonts.googleapis.com');
         const isJS = path.endsWith('.js');
         const isFavicon = path.endsWith('.ico') || path.includes('favicon');
 
-        // Evita duplicaÃ§Ã£o
+        // Evita duplicação
         const alreadyExists = Array.from(head.children).some(el => {
             return (isCSS && el.tagName === 'LINK' && el.href.includes(path)) ||
                    (isJS && el.tagName === 'SCRIPT' && el.src.includes(path)) ||
@@ -48,5 +40,34 @@
             link.type = 'image/x-icon';
             head.prepend(link);
         }
-    });
+    }
+
+    // Assets globais que sempre serão carregados
+    const globalAssets = [
+        'components/common.css',
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
+        'favicon.ico'
+    ];
+
+    // Carrega os assets globais
+    globalAssets.forEach(addAsset);
+
+    // Detecta a página atual e carrega os assets específicos
+    const currentPath = window.location.pathname;
+    
+    // Verifica se estamos em uma página dentro de /lightus/pages/
+    if (currentPath.includes('/lightus/pages/')) {
+        // Extrai o nome da página (último diretório antes do index.html)
+        const pagePathMatch = currentPath.match(/\/lightus\/pages\/([^\/]+)/);
+        
+        if (pagePathMatch && pagePathMatch[1]) {
+            const pageName = pagePathMatch[1];
+            const pageBasePath = `/lightus/pages/${pageName}/${pageName}`;
+            
+            // Adiciona CSS e JS específicos da página se existirem
+            addAsset(`${pageBasePath}.css`);
+            addAsset(`${pageBasePath}.js`);
+        }
+    }
 })();

@@ -4,6 +4,7 @@
     font-family: "manrope", sans-serif;
     font-size: 15px;
     color: #333;
+    text-rendering: optimizelegibility;
 }
 
 header * {

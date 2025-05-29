@@ -1,4 +1,4 @@
-.blog-container {
+﻿.blog-container {
     display: flex;
     align-items: flex-start; /* <-- Adicionado */
     gap: 20px;

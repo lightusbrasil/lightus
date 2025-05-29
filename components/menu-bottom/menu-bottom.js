@@ -33,7 +33,7 @@ if (Array.isArray(item.submenu) && item.submenu.length > 0) {
         console.error('Erro ao carregar menu:', error);
         const navLinks = document.querySelector('.links-bottom');
         if (navLinks) {
-            navLinks.innerHTML = '<li>Menu indisponÃ­vel</li>';
+            navLinks.innerHTML = '<li>Menu indisponível</li>';
         }
     }
 })();
