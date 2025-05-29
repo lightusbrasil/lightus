@@ -1,4 +1,4 @@
-﻿.blog-container {
+.blog-container {
     display: flex;
     align-items: flex-start; /* <-- Adicionado */
     gap: 20px;
@@ -96,16 +96,18 @@
 /* Conteúdo do post */
 .post-title {
     margin: 0;
+    font-size: 1.5rem;
 }
 
 .post-meta {
-    font-size: 0.85em;
+    font-size: 0.7em;
     color: #777;
-    margin-bottom: 10px;
+    margin-bottom: 2rem;
 }
 
 .post-body {
     line-height: 1.6;
+    font-size: 0.8rem;
 }
 
     .post-body img {
