@@ -4,27 +4,27 @@
     "submenu": [
       {
         "text": "Antecipar o Futuro com Inovação",
-        "url": "/pages/afi/"       
+        "url": "pages/afi/"       
       },
       {
         "text": "Gestão Financeira com Autoridade",
-        "url": "/pages/gfa"
+        "url": "pages/gfa"
       },
       {
         "text": "Gestão da Governança Corporativa",
-        "url": "/pages/ggc"
+        "url": "pages/ggc"
       },
       {
         "text": "Gestão de Portifólio de Projetos",
-        "url": "/pages/gpp"
+        "url": "pages/gpp"
       },
       {
         "text": "Modelo Hexa Comercial",
-        "url": "/pages/mhc"
+        "url": "pages/mhc"
       },
       {
         "text": "IPE",
-        "url": "/pages/ipe"
+        "url": "pages/ipe"
       }
     ]
   },
@@ -33,19 +33,19 @@
     "submenu": [
       {
         "text": "Indústria",
-        "url": "/pages/v_ia"
+        "url": "pages/v_ia"
       },
       {
         "text": "Logística",
-        "url": "/pages/v_lg"
+        "url": "pages/v_lg"
       },
       {
         "text": "Telecomunicações",
-        "url": "/pages/v_tc"
+        "url": "pages/v_tc"
       },
       {
         "text": "Varejo",
-        "url": "/pages/v_sp"
+        "url": "pages/v_sp"
       }
     ]
   },
@@ -54,19 +54,19 @@
     "submenu": [
       {
         "text": "Insights (Blog)",
-        "url": "/pages/insights"
+        "url": "pages/insights"
       },
       {
         "text": "Assine nossa Newsletter",
-        "url": "/pages/newsletter"
+        "url": "pages/newsletter"
       },
       {
         "text": "E-Books",
-        "url": "/pages/ebooks"
+        "url": "pages/ebooks"
       },
       {
         "text": "Planilhas, Checklists e Padrões",
-        "url": "/pages/plancheckdocs"
+        "url": "pages/plancheckdocs"
       }
     ]
   },
@@ -75,19 +75,19 @@
     "submenu": [
       {
         "text": "Quem Somos",
-        "url": "/pages/quemsomos"
+        "url": "pages/quemsomos"
       },
       {
         "text": "O que Fazemos",
-        "url": "/pages/missao"
+        "url": "pages/missao"
       },
       {
         "text": "Desenvolvimento Sustentável",
-        "url": "/pages/sustentabilidade"
+        "url": "pages/sustentabilidade"
       },
       {
         "text": "Fale Conosco",
-        "url": "/pages/faleconosco"
+        "url": "pages/faleconosco"
       }
     ]
   }
