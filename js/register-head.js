@@ -1,10 +1,10 @@
 (function () {
     const head = document.head || document.getElementsByTagName('head')[0];
 
-    // Insere <base href="/lightus/"> se ainda não houver
+    // Insere <base href="/lightus/"> se ainda nÃ£o houver
     if (!document.querySelector('base')) {
         const base = document.createElement('base');
-        base.href = '/';
+        base.href = '/lightus/';
         head.prepend(base);
     }
 
@@ -19,7 +19,7 @@
         const isCSS = path.endsWith('.css') || path.includes('fonts.googleapis.com');
         const isJS = path.endsWith('.js');
 
-        // Evita duplicação
+        // Evita duplicaÃ§Ã£o
         const alreadyExists = Array.from(head.children).some(el => {
             return (isCSS && el.tagName === 'LINK' && el.href.includes(path)) ||
                 (isJS && el.tagName === 'SCRIPT' && el.src.includes(path));
