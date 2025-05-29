@@ -21,7 +21,7 @@ if (Array.isArray(item.submenu) && item.submenu.length > 0) {
 
 (async function () {
     try {
-        const response = await fetch('/js/data/navigation.json');
+        const response = await fetch('js/data/navigation.json');
         const items = await response.json();
         const navLinks = document.querySelector('.links-bottom');
         if (!navLinks) return;
@@ -33,7 +33,7 @@ if (Array.isArray(item.submenu) && item.submenu.length > 0) {
         console.error('Erro ao carregar menu:', error);
         const navLinks = document.querySelector('.links-bottom');
         if (navLinks) {
-            navLinks.innerHTML = '<li>Menu indisponível</li>';
+            navLinks.innerHTML = '<li>Menu indisponÃ­vel</li>';
         }
     }
 })();
