@@ -1,0 +1,46 @@
+[
+  {
+    "id": "afi",
+    "tagline": "Como Implantar",
+    "mainTitle": "O processo de implantação na sua empresa é simples",
+    "cards": [
+      {
+        "title": "Avaliação Estratégica Gratuita",
+        "text": "Antes de qualquer ação, mergulhamos nos dados e contextos da sua empresa. Avaliamos cenários, identificamos gargalos e mapeamos oportunidades com base em benchmarks, tendências e KPIs do setor.",
+        "smallText": "🔎 Etapa 1"
+      },
+      {
+        "title": "Escolha da Solução Ideal",
+        "text": "Com base no diagnóstico, selecionamos a quatro mãos as soluções mais adequadas do nosso portfólio. Cada proposta é personalizada, com foco em resultado rápido e impacto sustentável.",
+        "smallText": "🧩 Etapa 2"
+      },
+      {
+        "title": "Execução com Agilidade e Suporte",
+        "text": "Implementamos a solução com metodologias ágeis, ferramentas de gestão e acompanhamento contínuo. Atuamos lado a lado com sua equipe para garantir performance, inovação e crescimento real.",
+        "smallText": "🚀 Etapa 3"
+      }
+    ]
+  },
+  {
+    "id": "anotherFeaturesSection",
+    "tagline": "Diferenciais Lightus",
+    "mainTitle": "Por que escolher a Lightus?",
+    "cards": [
+      {
+        "title": "Experiência Comprovada",
+        "text": "Mais de uma década de sucesso auxiliando empresas de diversos portes e segmentos.<br>Nossa expertise garante a você um caminho seguro para o sucesso.",
+        "smallText": "Resultados consistentes e confiáveis."
+      },
+      {
+        "title": "Abordagem Personalizada",
+        "text": "Cada solução é desenhada sob medida para as necessidades específicas da sua empresa.<br>Não acreditamos em \"tamanho único\", mas em soluções exclusivas.",
+        "smallText": "Sua empresa, sua estratégia."
+      },
+      {
+        "title": "Parceria Duradoura",
+        "text": "Vamos além da consultoria: construímos relações de longo prazo com nossos clientes.<br>Seu sucesso é o nosso sucesso, em cada etapa da jornada.",
+        "smallText": "Comprometimento com seu futuro."
+      }
+    ]
+  }
+]

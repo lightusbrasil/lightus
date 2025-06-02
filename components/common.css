@@ -2,9 +2,10 @@
     margin: 0;
     padding: 0;
     font-family: "manrope", sans-serif;
-    font-size: 15px;
+    
     color: #333;
     text-rendering: optimizelegibility;
+    -webkit-font-smoothing:antialiased;
 }
 
 header * {
