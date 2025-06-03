@@ -17,7 +17,7 @@
     try {
         // Assume que seu arquivo JSON está em 'js/data/tagline-title-text.json'
         // Ajuste este caminho se sua estrutura de arquivos for diferente.
-        const response = await fetch('/components/tagline-title-text/tagline-title-text.json'); // Caminho atualizado para /js/data/
+        const response = await fetch('/data/tagline-title-text.json'); // Caminho atualizado para /js/data/
 
         if (!response.ok) {
             throw new Error(`Erro ao carregar tagline-title-text.json: ${response.statusText}`);

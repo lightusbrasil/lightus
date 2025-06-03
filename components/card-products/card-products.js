@@ -13,7 +13,7 @@
     }
 
     try {
-        const response = await fetch('/components/card-products/card-products.json');
+        const response = await fetch('/data/card-products.json');
 
         if (!response.ok) {
             throw new Error(`Erro ao carregar card-products.json: ${response.statusText}`);

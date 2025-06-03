@@ -13,7 +13,7 @@
     }
 
     try {
-        const response = await fetch('js/data/feature-cards-data.json');
+        const response = await fetch('/data/feature-cards.json');
 
         if (!response.ok) {
             throw new Error(`Erro ao carregar feature-cards-data.json: ${response.statusText}`);

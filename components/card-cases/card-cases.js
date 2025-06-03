@@ -11,7 +11,7 @@ async function loadCardCasesComponent() {
     // Carrega o JSON apenas UMA VEZ para todas as instâncias do componente
     let allConfigs = [];
     try {
-        const response = await fetch('/components/card-cases/card-cases.json');
+        const response = await fetch('/data/card-cases.json');
         if (!response.ok) {
             throw new Error(`Erro ao carregar card-cases.json: ${response.statusText}`);
         }

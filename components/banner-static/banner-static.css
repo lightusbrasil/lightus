@@ -34,7 +34,7 @@
 }
 
 .banner-static-title {
-    font-size: 42px;
+    font-size: 30px;
     color: #ffffff;
     margin-bottom: 1.2rem;
     font-weight: 600;
@@ -80,7 +80,7 @@
     }
 
     .banner-static-title {
-        font-size: 2rem;
+        font-size: 25px;
     }
 
     .banner-static-text {

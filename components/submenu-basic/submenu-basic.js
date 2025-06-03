@@ -9,7 +9,7 @@
     }
 
     try {
-        const response = await fetch('/components/submenu-basic/submenu-basic.json');
+        const response = await fetch('/data/submenu-basic.json');
         if (!response.ok) throw new Error(`Falha ao carregar: ${response.status}`);
 
         const allSubmenus = await response.json();
