@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ipe",
+    "title": "Descubra o verdadeiro potencial da sua empresa com o IPE",
+    "image-url": "images/banner-static-ipe.png",
+    "text": "Acesse gratuitamente o IPE (Índice de Produtividade Empresarial). Uma análise precisa que revela gargalos, compara sua operação com o mercado e entrega recomendações prontas para aplicar.",
+    "button": "Quero meu IPE gratuito",
+    "button-url": "pages/ipe/#b006"
+  },
+  {
+    "id": "afi",
+    "title": "Torne-se referência em inovação e lidere o futuro do seu setor",
+    "image-url": "images/banner-static-afi.png",
+    "text": "Antecipe tendências, inove com consistência e execute com velocidade.<br>Estratégia, inovação e agilidade para sair na frente e dominar seu mercado.",
+    "button": "Agende um Diagnóstico Gratuito",
+    "button-url": "pages/afi/#b006"
+  },
+  {
+    "id": "gfa",
+    "title": "Tenha Autoridade Financeira e Domine o Futuro da Sua Empresa",
+    "image-url": "images/banner-static-gfa.png",
+    "text": "Controle absoluto do caixa, decisões baseadas em dados e crescimento com rentabilidade.<br>Finanças organizadas, lucros previsíveis, e segurança a longo prazo.",
+    "button": "Agende um Diagnóstico Gratuito",
+    "button-url": "pages/gfa/#b006"
+  },
+  {
+    "id": "ggc",
+    "title": "Construa uma governança sólida e lidere com confiança",
+    "image-url": "images/banner-static-ggc.png",
+    "text": "Profissionalize sua gestão, fortaleça a cultura organizacional e prepare sua empresa para o futuro.<br>Governança moderna, ética e estratégica para gerar credibilidade, sustentabilidade e crescimento de longo prazo.",
+    "button": "Agende um Diagnóstico Gratuito",
+    "button-url": "pages/ggc/#b006"
+  },
+  {
+    "id": "mhc",
+    "title": "Acelere suas vendas com método, posicionamento e performance",
+    "image-url": "images/banner-static-mhc.png",
+    "text": "Estruture seu processo comercial com inteligência, gere leads com constância e feche negócios com mais previsibilidade.",
+    "button": "Agende um Diagnóstico Gratuito",
+    "button-url": "pages/mhc/#b006"
+  },
+  {
+    "id": "gpp",
+    "title": "Tenha controle total sobre seus projetos e maximize o retorno estratégico",
+    "image-url": "images/banner-static-gpp.png",
+    "text": "Selecione os projetos certos, aloque recursos com inteligência e entregue resultados com eficiência.<br>Portfólio de projetos alinhado à estratégia para garantir foco, agilidade e impacto.",
+    "button": "Agende um Diagnóstico Gratuito",
+    "button-url": "pages/gpp/#b006"
+  }
+]

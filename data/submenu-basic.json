@@ -1,0 +1,79 @@
+[
+  {
+    "id": "solucoes",
+    "items": [
+      {
+        "text": "Visão Geral",
+        "url": "#b001",
+        "icon": "fa-solid fa-info-circle"
+      },
+      {
+        "text": "Benefícios",
+        "url": "#b002",
+        "icon": "fa-solid fa-star"
+      },
+      {
+        "text": "Como Implantar",
+        "url": "#b003",
+        "icon": "fa-solid fa-rocket"
+      },
+      {
+        "text": "Soluções",
+        "url": "#b004",
+        "icon": "fa-solid fa-lightbulb"
+      },
+      {
+        "text": "Cases",
+        "url": "#b005",
+        "icon": "fa-solid fa-trophy"
+      },
+      {
+        "text": "Contato",
+        "url": "#b006",
+        "icon": "fa-solid fa-headset"
+      }
+    ]
+  },
+  {
+    "id": "menuRodape",
+    "items": [
+      {
+        "text": "Política de Privacidade",
+        "url": "/pages/privacidade.html"
+      },
+      {
+        "text": "Termos de Uso",
+        "url": "/pages/termos.html"
+      },
+      {
+        "text": "FAQ",
+        "url": "/pages/faq.html"
+      }
+    ]
+  },
+  {
+    "id": "menuServicos",
+    "items": [
+      {
+        "text": "Consultoria",
+        "url": "/pages/servicos/consultoria.html",
+        "icon": "fa-solid fa-lightbulb"
+      },
+      {
+        "text": "Auditoria",
+        "url": "/pages/servicos/auditoria.html",
+        "icon": "fa-solid fa-magnifying-glass"
+      },
+      {
+        "text": "Treinamento",
+        "url": "/pages/servicos/treinamento.html",
+        "icon": "fa-solid fa-graduation-cap"
+      },
+      {
+        "text": "IPE",
+        "url": "/pages/ipe.html",
+        "icon": "fa-solid fa-chart-line"
+      }
+    ]
+  }
+]
