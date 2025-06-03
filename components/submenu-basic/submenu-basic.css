@@ -35,7 +35,7 @@
 .submenu-basic-link {
     color: #fff; /* Cor padrão do texto do link */
     text-decoration: none; /* Remove sublinhado */
-    padding: 0 15px; /* Adiciona padding horizontal para dar espaço ao redor do texto/ícone */
+    padding: 0 10px; /* Adiciona padding horizontal para dar espaço ao redor do texto/ícone */
     display: flex; /* Permite que o ícone e o texto fiquem em linha e centralizados */
     align-items: center; /* Centraliza verticalmente ícone e texto */
     gap: 8px; /* Espaçamento entre o ícone e o texto */
@@ -43,6 +43,7 @@
     transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave para hover */
     height: 100%; /* O link ocupa toda a altura do item da lista */
     box-sizing: border-box; /* Garante que padding não adicione à altura/largura total */
+    font-size:0.8rem;
 }
 
     /* Estado de HOVER para o link */
