@@ -50,40 +50,46 @@
 
                     // --- INÍCIO DA MUDANÇA SIGNIFICATIVA AQUI ---
 
+                    // Adiciona o título da seção TOP (se houver)
+                    if (card['card-products-title-top']) {
+                        const topSectionTitle = document.createElement('h4');
+                        topSectionTitle.classList.add('card-products-title-top'); // Adiciona a nova classe específica
+                        topSectionTitle.textContent = card['card-products-title-top'];
+                        cardContent.appendChild(topSectionTitle);
+                    }
+
                     // Cria a lista TOP
                     const topList = document.createElement('ul');
-                    topList.classList.add('card-products-list');
-                    topList.classList.add('card-products-top'); // Adiciona a classe 'card-products-top' diretamente à UL
+                    topList.classList.add('card-products-list-top'); // Muda a classe para 'card-products-list-top'
 
-                    const topItems = card['card-products-top'].split('<br>').filter(item => item.trim() !== '');
-                    topItems.forEach(itemText => {
-                        const listItem = document.createElement('li');
-                        // Remove os marcadores de texto do JSON, o CSS vai adicioná-los
-                        listItem.innerHTML = itemText.replace(/✅\s*/, '').trim();
-                        topList.appendChild(listItem);
-                    });
+                    if (card['card-products-top'] && Array.isArray(card['card-products-top'])) {
+                        card['card-products-top'].forEach(itemObj => {
+                            const listItem = document.createElement('li');
+                            listItem.innerHTML = itemObj.item.trim();
+                            topList.appendChild(listItem);
+                        });
+                    }
                     cardContent.appendChild(topList);
 
                     // Adiciona o título da seção "Indicado para" (se houver)
-                    if (card['card-products-bottom-section-title']) {
+                    if (card['card-products-title-bottom']) {
                         const bottomSectionTitle = document.createElement('h4');
-                        bottomSectionTitle.classList.add('card-products-section-title');
-                        bottomSectionTitle.textContent = card['card-products-bottom-section-title'];
+                        bottomSectionTitle.classList.add('card-products-title-bottom'); // Adiciona a nova classe específica
+                        bottomSectionTitle.textContent = card['card-products-title-bottom'];
                         cardContent.appendChild(bottomSectionTitle);
                     }
 
                     // Cria a lista BOTTOM
                     const bottomList = document.createElement('ul');
-                    bottomList.classList.add('card-products-list');
-                    bottomList.classList.add('card-products-bottom'); // Adiciona a classe 'card-products-bottom' diretamente à UL
+                    bottomList.classList.add('card-products-list-bottom'); // Muda a classe para 'card-products-list-bottom'
 
-                    const bottomItems = card['card-products-bottom'].split('<br>').filter(item => item.trim() !== '');
-                    bottomItems.forEach(itemText => {
-                        const listItem = document.createElement('li');
-                        // Remova o marcador de texto do JSON, o CSS vai adicioná-lo
-                        listItem.innerHTML = itemText.replace(/📌\\s*/, '').trim();
-                        bottomList.appendChild(listItem);
-                    });
+                    if (card['card-products-bottom'] && Array.isArray(card['card-products-bottom'])) {
+                        card['card-products-bottom'].forEach(itemObj => {
+                            const listItem = document.createElement('li');
+                            listItem.innerHTML = itemObj.item.trim();
+                            bottomList.appendChild(listItem);
+                        });
+                    }
                     cardContent.appendChild(bottomList);
 
                     // --- FIM DA MUDANÇA SIGNIFICATIVA AQUI ---

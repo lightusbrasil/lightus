@@ -5,34 +5,104 @@
     "title": "Como podemos ajudar?",
     "cards": [
       {
+        "card-products-title": "Gestão por Diretrizes e Desdobramento de Metas",
+        "card-products-title-top": "Alinhe toda a equipe à estratégia com metas claras, indicadores eficientes e uma execução disciplinada que gera resultados.",
+        "card-products-title-bottom": "Indicado para empresas que precisam melhorar a execução de sua estratégia, garantindo que as metas estabelecidas sejam desdobradas corretamente e acompanhadas com eficiência.",
+        "card-products-top": [
+          { "item": "Mapeamento da Estratégia Corporativa → Definição dos direcionadores estratégicos e objetivos organizacionais." },
+          { "item": "Estruturação do Desdobramento de Metas → Tradução das metas estratégicas em metas táticas e operacionais." },
+          { "item": "Definição de Responsabilidades e Indicadores → Designação de KPIs por setor e definição de responsáveis." },
+          { "item": "Ferramenta de Acompanhamento → Implementação de dashboards, reuniões de alinhamento e relatórios gerenciais." },
+          { "item": "Plano de Acompanhamento e Revisão → Estruturação do ciclo de checagem de metas e ajustes contínuos." },
+          { "item": "Treinamento para Times → Workshops para garantir a adoção das diretrizes e execução disciplinada." }
+        ],
+        "card-products-bottom": [
+          { "item": "Empresas que definem metas, mas têm dificuldades em desdobrá-las em ações práticas." },
+          { "item": "Negócios que perdem tempo e recursos devido à falta de alinhamento entre equipes." },
+          { "item": "Empresas que não conseguem medir com precisão seu desempenho estratégico." },
+          { "item": "Organizações que precisam aumentar a produtividade e a clareza na execução de planos." },
+          { "item": "Empresas que querem profissionalizar a gestão, tornando-a baseada em dados e indicadores." }
+        ]
+      },
+      {
+        "card-products-title": "OKRs (Objectives and Key Results) e Metodologias Ágeis",
+        "card-products-title-top": "Implemente foco, alinhamento e agilidade com OKRs bem definidos e práticas ágeis que aceleram a execução estratégica.",
+        "card-products-title-bottom": "Indicado para empresas que desejam implementar uma gestão orientada a metas e execução ágil, garantindo alinhamento estratégico e alto desempenho.",
+        "card-products-top": [
+          { "item": "Diagnóstico de Gestão Atual → Avaliação do nível de maturidade em OKRs e agilidade." },
+          { "item": "Definição dos OKRs da Empresa → Estruturação de objetivos estratégicos e Key Results mensuráveis." },
+          { "item": "Cascata de OKRs por Equipes → Alinhamento dos OKRs entre os níveis organizacionais." },
+          { "item": "Ritmo de Execução e Check-ins → Ciclos de acompanhamento (semanais, mensais, trimestrais)." },
+          { "item": "Estruturação de Cerimônias Ágeis → Sprint Planning, Reviews e Retrospectives para execução eficiente." },
+          { "item": "Treinamento e Onboarding → Capacitação para liderança e times na adoção dos OKRs e metodologias ágeis." }
+        ],
+        "card-products-bottom": [
+          { "item": "Empresas que enfrentam dificuldades em definir e acompanhar metas claras." },
+          { "item": "Negócios que desejam melhorar a comunicação e o alinhamento entre equipes." },
+          { "item": "Empresas que querem aumentar a velocidade e a qualidade da execução estratégica." },
+          { "item": "Organizações que desejam adotar metodologias ágeis para melhorar a produtividade." },
+          { "item": "Empresas que precisam transformar sua cultura para se tornarem mais inovadoras e eficientes." }
+        ]
+      },
+      {
+        "card-products-title": "Monitoramento de Mercado e Tendências",
+        "card-products-title-top": "Antecipe movimentos do mercado com inteligência competitiva, insights estratégicos e respostas ágeis às tendências emergentes.",
+        "card-products-title-bottom": "Indicado para empresas que precisam de inteligência estratégica contínua para antecipar tendências, mitigar riscos e capturar oportunidades no mercado.",
+        "card-products-top": [
+          { "item": "Mapeamento de Fontes de Informação → Definição de relatórios, bases de dados e concorrentes monitorados." },
+          { "item": "Definição de Indicadores de Tendências → Criação de KPI’s para acompanhamento da evolução do mercado." },
+          { "item": "Sistema de Inteligência Competitiva → Monitoramento de players, novas tecnologias e movimentos estratégicos da concorrência." },
+          { "item": "Relatórios de Insights Periódicos → Boletins mensais ou trimestrais com análises de impacto e recomendações." },
+          { "item": "Workshops de Sensibilização e Adaptação → Sessões com a liderança e equipes para traduzir insights em ações." },
+          { "item": "Plano de Respostas Estratégicas → Desenvolvimento de estratégias ágeis para adaptação às mudanças do mercado." }
+        ],
+        "card-products-bottom": [
+          { "item": "Empresas que querem se antecipar às tendências do setor e evitar surpresas do mercado." },
+          { "item": "Negócios que precisam acompanhar a concorrência e identificar mudanças estratégicas antes que impactem sua operação." },
+          { "item": "Empresas que atuam em mercados dinâmicos e de rápida transformação." },
+          { "item": "Startups e scale-ups que precisam validar oportunidades de crescimento com base em dados concretos." },
+          { "item": "Empresas que desejam criar um sistema contínuo de inteligência de mercado para embasar decisões estratégicas." }
+        ]
+      },
+      {
         "card-products-title": "Definição de Estratégias de Crescimento e Expansão",
-        "card-products-top": "Análise de Cenário Atual → Matriz SWOT, diagnóstico organizacional e posicionamento de mercado.<br>Mapeamento de Oportunidades de Expansão → Identificação de mercados-alvo e segmentação de clientes.<br>Definição da Estratégia de Crescimento → Desenvolvimento de plano focado em penetração, diversificação ou novas aquisições.<br>Plano de Implementação → Roadmap com fases definidas, responsáveis e KPIs de sucesso.<br>Simulação de Impacto Financeiro → Projeção de ROI e análise de viabilidade financeira.<br>Plano de Acompanhamento → Monitoramento trimestral, dashboards estratégicos e governança da execução.",
-        "card-products-bottom-section-title": "Esta solução é indicada para empresas que buscam crescimento estruturado e expansão de mercado com estratégia e inovação, evitando riscos financeiros e operacionais.",
-        "card-products-bottom": "Negócios que querem expandir para novas regiões ou mercados, mas não têm um plano estruturado.<br>Empresas que cresceram rápido e agora precisam definir direções estratégicas claras.<br>Empresas que faturam bem, mas sentem dificuldades em escalar suas operações de forma eficiente.<br>Negócios que desejam inovar e diferenciar seus modelos de crescimento.<br>Empresas que precisam validar financeiramente sua estratégia de crescimento antes de investir."
+        "card-products-title-top": "Impulsione o crescimento do seu negócio com estratégias sólidas, expansão direcionada e foco em resultados mensuráveis.",
+        "card-products-title-bottom": "Indicado para empresas que buscam crescimento estruturado e expansão de mercado com estratégia e inovação, evitando riscos financeiros e operacionais.",
+        "card-products-top": [
+          { "item": "Análise de Cenário Atual → Matriz SWOT, diagnóstico organizacional e posicionamento de mercado." },
+          { "item": "Mapeamento de Oportunidades de Expansão → Identificação de mercados-alvo e segmentação de clientes." },
+          { "item": "Definição da Estratégia de Crescimento → Desenvolvimento de plano focado em penetração, diversificação ou novas aquisições." },
+          { "item": "Plano de Implementação → Roadmap com fases definidas, responsáveis e KPIs de sucesso." },
+          { "item": "Simulação de Impacto Financeiro → Projeção de ROI e análise de viabilidade financeira." },
+          { "item": "Plano de Acompanhamento → Monitoramento trimestral, dashboards estratégicos e governança da execução." }
+        ],
+        "card-products-bottom": [
+          { "item": "Negócios que querem expandir para novas regiões ou mercados, mas não têm um plano estruturado." },
+          { "item": "Empresas que cresceram rápido e agora precisam definir direções estratégicas claras." },
+          { "item": "Empresas que faturam bem, mas sentem dificuldades em escalar suas operações de forma eficiente." },
+          { "item": "Negócios que desejam inovar e diferenciar seus modelos de crescimento." },
+          { "item": "Empresas que precisam validar financeiramente sua estratégia de crescimento antes de investir." }
+        ]
       },
       {
         "card-products-title": "Inovação de Modelos de Negócio e Diferenciação Competitiva",
-        "card-products-top": "Diagnóstico do Modelo de Negócio Atual → Canvas do Modelo de Negócio e análise de diferenciação.<br>Benchmarking e Tendências de Mercado → Estudo de cases e análise de tendências emergentes.<br>Desenho de Novas Propostas de Valor → Criação e prototipação de novos serviços/produtos.<br>Reformulação de Canais de Distribuição e Receita → Novos formatos de venda e monetização.<br>Plano de Adoção da Inovação → Testes pilotos, desenvolvimento de MVPs e rollout escalável.<br>Definição de KPIs de Inovação e Competitividade → Métricas e monitoramento para evolução contínua.",
-        "card-products-bottom-section-title": "Este produto é indicado para empresas que precisam se reinventar para continuar relevantes e competitivas no mercado, criando novas ofertas de valor e explorando novas fontes de receita.",
-        "card-products-bottom": "Negócios que querem inovar, mas não sabem por onde começar.<br>Empresas que estão perdendo mercado para concorrentes mais inovadores.<br>Empresas que querem lançar novos produtos e serviços, mas precisam validar a aceitação.<br>Empresas que querem explorar novos canais de distribuição e monetização.<br>Negócios que buscam um modelo de crescimento escalável e sustentável."
-      },
-      {
-        "card-products-title": "Inovação de Modelos de Negócio e Diferenciação Competitiva",
-        "card-products-top": "Diagnóstico do Modelo de Negócio Atual → Canvas do Modelo de Negócio e análise de diferenciação.<br>Benchmarking e Tendências de Mercado → Estudo de cases e análise de tendências emergentes.<br>Desenho de Novas Propostas de Valor → Criação e prototipação de novos serviços/produtos.<br>Reformulação de Canais de Distribuição e Receita → Novos formatos de venda e monetização.<br>Plano de Adoção da Inovação → Testes pilotos, desenvolvimento de MVPs e rollout escalável.<br>Definição de KPIs de Inovação e Competitividade → Métricas e monitoramento para evolução contínua.",
-        "card-products-bottom-section-title": "Este produto é indicado para empresas que precisam se reinventar para continuar relevantes e competitivas no mercado, criando novas ofertas de valor e explorando novas fontes de receita.",
-        "card-products-bottom": "Negócios que querem inovar, mas não sabem por onde começar.<br>Empresas que estão perdendo mercado para concorrentes mais inovadores.<br>Empresas que querem lançar novos produtos e serviços, mas precisam validar a aceitação.<br>Empresas que querem explorar novos canais de distribuição e monetização.<br>Negócios que buscam um modelo de crescimento escalável e sustentável."
-      },
-      {
-        "card-products-title": "Inovação de Modelos de Negócio e Diferenciação Competitiva",
-        "card-products-top": "Diagnóstico do Modelo de Negócio Atual → Canvas do Modelo de Negócio e análise de diferenciação.<br>Benchmarking e Tendências de Mercado → Estudo de cases e análise de tendências emergentes.<br>Desenho de Novas Propostas de Valor → Criação e prototipação de novos serviços/produtos.<br>Reformulação de Canais de Distribuição e Receita → Novos formatos de venda e monetização.<br>Plano de Adoção da Inovação → Testes pilotos, desenvolvimento de MVPs e rollout escalável.<br>Definição de KPIs de Inovação e Competitividade → Métricas e monitoramento para evolução contínua.",
-        "card-products-bottom-section-title": "Este produto é indicado para empresas que precisam se reinventar para continuar relevantes e competitivas no mercado, criando novas ofertas de valor e explorando novas fontes de receita.",
-        "card-products-bottom": "Negócios que querem inovar, mas não sabem por onde começar.<br>Empresas que estão perdendo mercado para concorrentes mais inovadores.<br>Empresas que querem lançar novos produtos e serviços, mas precisam validar a aceitação.<br>Empresas que querem explorar novos canais de distribuição e monetização.<br>Negócios que buscam um modelo de crescimento escalável e sustentável."
-      },
-      {
-        "card-products-title": "Inovação de Modelos de Negócio e Diferenciação Competitiva",
-        "card-products-top": "Diagnóstico do Modelo de Negócio Atual → Canvas do Modelo de Negócio e análise de diferenciação.<br>Benchmarking e Tendências de Mercado → Estudo de cases e análise de tendências emergentes.<br>Desenho de Novas Propostas de Valor → Criação e prototipação de novos serviços/produtos.<br>Reformulação de Canais de Distribuição e Receita → Novos formatos de venda e monetização.<br>Plano de Adoção da Inovação → Testes pilotos, desenvolvimento de MVPs e rollout escalável.<br>Definição de KPIs de Inovação e Competitividade → Métricas e monitoramento para evolução contínua.",
-        "card-products-bottom-section-title": "Este produto é indicado para empresas que precisam se reinventar para continuar relevantes e competitivas no mercado, criando novas ofertas de valor e explorando novas fontes de receita.",
-        "card-products-bottom": "Negócios que querem inovar, mas não sabem por onde começar.<br>Empresas que estão perdendo mercado para concorrentes mais inovadores.<br>Empresas que querem lançar novos produtos e serviços, mas precisam validar a aceitação.<br>Empresas que querem explorar novos canais de distribuição e monetização.<br>Negócios que buscam um modelo de crescimento escalável e sustentável."
+        "card-products-title-top": "Transforme sua empresa com inovação prática e estratégias que reposicionam seu modelo de negócio no mercado!",
+        "card-products-title-bottom": "Indicado para empresas que precisam se reinventar para continuar relevantes e competitivas no mercado, criando novas ofertas de valor e explorando novas fontes de receita.",
+        "card-products-top": [
+          { "item": "Diagnóstico do Modelo de Negócio Atual → Canvas do Modelo de Negócio e análise de diferenciação." },
+          { "item": "Benchmarking e Tendências de Mercado → Estudo de cases e análise de tendências emergentes." },
+          { "item": "Desenho de Novas Propostas de Valor → Criação e prototipação de novos serviços/produtos." },
+          { "item": "Reformulação de Canais de Distribuição e Receita → Novos formatos de venda e monetização." },
+          { "item": "Plano de Adoção da Inovação → Testes pilotos, desenvolvimento de MVPs e rollout escalável." },
+          { "item": "Definição de KPIs de Inovação e Competitividade → Métricas e monitoramento para evolução contínua." }
+        ],
+        "card-products-bottom": [
+          { "item": "Negócios que querem inovar, mas não sabem por onde começar." },
+          { "item": "Empresas que estão perdendo mercado para concorrentes mais inovadores." },
+          { "item": "Empresas que querem lançar novos produtos e serviços, mas precisam validar a aceitação." },
+          { "item": "Empresas que querem explorar novos canais de distribuição e monetização." },
+          { "item": "Negócios que buscam um modelo de crescimento escalável e sustentável." }
+        ]
       }
     ]
   }

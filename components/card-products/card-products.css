@@ -52,6 +52,7 @@
     border-radius: 2px;
     border: 1px solid #12222d;
     border-top: 2px solid #d3a303;
+    background-color: #fcfcfc;
     overflow: hidden;
     display: flex;
     flex-direction: column; /* Conteúdo empilhado verticalmente */
@@ -65,56 +66,88 @@
 }
 
 .card-products-title {
-    font-size: 1.1rem; /* Título do card */
+    font-size: 1rem; /* Título do card */
     color: #12222d;
     font-weight: 700;
-    margin-bottom: 20px; /* Mais espaço para o título */
+    margin-bottom: 5px; /* Mais espaço para o título */
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 1px 1px 1px #dedede;
 }
 
-.card-products-section-title { /* Para "Benefícios" e "Indicado para" */
+
+
+/* NOVO: Ícone 📌 para a lista TOP */
+/* Estilos para a lista de itens "bottom" */
+
+.card-products-title-top { /* Estilos específicos para o título TOP */
     font-size: 12px;
     color: #12222d; /* Cor amarela para os títulos de seção */
-    font-weight:normal;
-    margin-top: 20px;
+    font-weight: 700;
+    margin-top: 5px;
     margin-bottom: 10px;
-    font-style:italic;
+    color: #fff;
+    line-height: 12px;
+    background-color: #d3a303;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #333;
 }
 
-.card-products-list { /* Estilos para listas de benefícios/indicações */
-    list-style: none; /* Remove marcadores de lista padrão */
-    padding: 0;
-    margin: 0;
-    color: #12222d;
-}
-
-    .card-products-list li {
-        margin-bottom: 8px; /* Espaço entre itens da lista */
-        padding-left: 25px; /* Espaço para o ícone customizado */
-        position: relative;
-    }
-
-    /* NOVO: Ícone ✅ para a lista TOP */
-    .card-products-list.card-products-top li::before {
-        content: '✅';
-        position: absolute;
-        left: 0;
-        color: #28a745; /* Cor verde para o check */
-        font-size: 1.1em; /* Ajusta o tamanho do ícone */
-        
-        top: 50%;
-        transform: translateY(-50%);
-        margin-top: -2px; /* Pequeno ajuste fino */
-    }
-
-    /* NOVO: Ícone 📌 para a lista BOTTOM */
-/* Estilos para a lista de itens "bottom" */
-.card-products-list {
+.card-products-list-top { /* Alterado para .card-products-list-bottom */
     list-style: none; /* Remove o marcador de lista padrão */
     padding: 0;
     margin: 0;
 }
 
-    .card-products-list li {
+    .card-products-list-top li { /* Alterado para .card-products-list-bottom li */
+        position: relative; /* Necessário para posicionar o pseudo-elemento */
+        padding-left: 25px; /* Espaço para o ícone + algum padding */
+        margin-bottom: 8px; /* Espaço entre os itens da lista */
+        font-size: 12px;
+        color: #12222d;
+        line-height: 1; /* Ajuste o line-height para melhor alinhamento do texto */
+        
+    }
+
+        .card-products-list-top li:last-child { /* Alterado para .card-products-list-bottom li:last-child */
+            margin-bottom: 0; /* Remove margem do último item */
+        }
+
+        .card-products-list-top li::before { /* Alterado para .card-products-list-bottom li::before */
+            content: '✅';
+            position: absolute;
+            left: 0; /* Alinha à esquerda do padding-left do LI */
+            color: #d3a303; /* Cor amarela para o pino */
+            font-size: 1.1em; /* Ajusta o tamanho do ícone */
+            top: 50%; /* Tenta centralizar verticalmente o ícone */
+            transform: translateY(-50%); /* Ajuste fino para centralização vertical */
+            line-height: 1; /* Garante que o pseudo-elemento não afete a altura da linha principal */
+            width: 20px; /* Largura para o ícone */
+            text-align: center; /* Centraliza o ícone dentro da sua largura */
+        }
+
+/* NOVO: Ícone 📌 para a lista BOTTOM */
+/* Estilos para a lista de itens "bottom" */
+
+.card-products-title-bottom { /* Estilos específicos para o título BOTTOM */
+    font-size: 12px;
+    color: #12222d; /* Cor amarela para os títulos de seção */
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #fff;
+    line-height: 12px;
+    background-color: #d3a303;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #333;
+}
+.card-products-list-bottom { /* Alterado para .card-products-list-bottom */
+    list-style: none; /* Remove o marcador de lista padrão */
+    padding: 0;
+    margin: 0;
+}
+
+    .card-products-list-bottom li { /* Alterado para .card-products-list-bottom li */
         position: relative; /* Necessário para posicionar o pseudo-elemento */
         padding-left: 25px; /* Espaço para o ícone + algum padding */
         margin-bottom: 8px; /* Espaço entre os itens da lista */
@@ -123,11 +156,11 @@
         line-height: 1; /* Ajuste o line-height para melhor alinhamento do texto */
     }
 
-        .card-products-list li:last-child {
+        .card-products-list-bottom li:last-child { /* Alterado para .card-products-list-bottom li:last-child */
             margin-bottom: 0; /* Remove margem do último item */
         }
 
-        .card-products-list li::before {
+        .card-products-list-bottom li::before { /* Alterado para .card-products-list-bottom li::before */
             content: '📌'; /* O ícone de pino */
             position: absolute;
             left: 0; /* Alinha à esquerda do padding-left do LI */
