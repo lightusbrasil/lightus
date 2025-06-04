@@ -35,44 +35,37 @@
     ]
   },
   {
-    "id": "menuRodape",
+    "id": "verticais",
     "items": [
       {
-        "text": "Política de Privacidade",
-        "url": "/pages/privacidade.html"
+        "text": "Desafios do Setor",
+        "url": "#b001",
+        "icon": "fa-solid fa-info-circle"
       },
       {
-        "text": "Termos de Uso",
-        "url": "/pages/termos.html"
+        "text": "Como Ajudamos o Setor",
+        "url": "#b002",
+        "icon": "fa-solid fa-star"
       },
       {
-        "text": "FAQ",
-        "url": "/pages/faq.html"
-      }
-    ]
-  },
-  {
-    "id": "menuServicos",
-    "items": [
+        "text": "Como Implantar",
+        "url": "#b003",
+        "icon": "fa-solid fa-rocket"
+      },
       {
-        "text": "Consultoria",
-        "url": "/pages/servicos/consultoria.html",
+        "text": "Soluções",
+        "url": "#b004",
         "icon": "fa-solid fa-lightbulb"
       },
       {
-        "text": "Auditoria",
-        "url": "/pages/servicos/auditoria.html",
-        "icon": "fa-solid fa-magnifying-glass"
+        "text": "Cases",
+        "url": "#b005",
+        "icon": "fa-solid fa-trophy"
       },
       {
-        "text": "Treinamento",
-        "url": "/pages/servicos/treinamento.html",
-        "icon": "fa-solid fa-graduation-cap"
-      },
-      {
-        "text": "IPE",
-        "url": "/pages/ipe.html",
-        "icon": "fa-solid fa-chart-line"
+        "text": "Contato",
+        "url": "#b006",
+        "icon": "fa-solid fa-headset"
       }
     ]
   }

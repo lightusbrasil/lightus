@@ -33,7 +33,7 @@
     "submenu": [
       {
         "text": "Indústria",
-        "url": "pages/v_ia"
+        "url": "pages/v_in"
       },
       {
         "text": "Logística",
@@ -45,7 +45,7 @@
       },
       {
         "text": "Varejo",
-        "url": "pages/v_sp"
+        "url": "pages/v_va"
       }
     ]
   },

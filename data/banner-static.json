@@ -46,5 +46,37 @@
     "text": "Selecione os projetos certos, aloque recursos com inteligência e entregue resultados com eficiência.<br>Portfólio de projetos alinhado à estratégia para garantir foco, agilidade e impacto.",
     "button": "Agende um Diagnóstico Gratuito",
     "button-url": "pages/gpp/#b006"
+  },
+  {
+    "id": "v_in",
+    "title": "Aumente sua margem e eficiência na Indústria",
+    "image-url": "images/banner-static-v_in.png",
+    "text": "Resultados concretos para indústrias que enfrentam pressão de custos, desperdícios e dificuldade de escalar com qualidade.",
+    "button": "Agende um Diagnóstico Gratuito",
+    "button-url": "pages/gpp/#b006"
+  },
+  {
+    "id": "v_lg",
+    "title": "Mais lucro e previsibilidade para Transportadoras e Operadores Logísticos",
+    "image-url": "images/banner-static-v_lg.png",
+    "text": "Resultados práticos para empresas de logística que lidam com custos crescentes, baixa margem, processos pouco controlados e dificuldade para escalar com segurança.",
+    "button": "Agende um Diagnóstico Gratuito",
+    "button-url": "pages/gpp/#b006"
+  },
+  {
+    "id": "v_va",
+    "title": "Aumente sua margem e eficiência no setor varejista",
+    "image-url": "images/banner-static-v_va.png",
+    "text": "Resultados concretos para varejos que enfrentam margens apertadas, perdas operacionais e desafios na gestão de equipes e processos.",
+    "button": "Agende um Diagnóstico Gratuito",
+    "button-url": "pages/gpp/#b006"
+  },
+  {
+    "id": "v_tc",
+    "title": "Aumente sua margem e controle na Telecom",
+    "image-url": "images/banner-static-v_tc.png",
+    "text": "Resultados concretos para operadoras regionais e empresas de telecomunicações que enfrentam alta inadimplência, baixa eficiência e dificuldades em escalar com governança.",
+    "button": "Agende um Diagnóstico Gratuito",
+    "button-url": "pages/gpp/#b006"
   }
 ]
