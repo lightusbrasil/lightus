@@ -1,0 +1,16 @@
+[
+  {
+    "id": "dre-simples",
+    "name": "Planilha de Orçamento Empresarial",
+    "description": "DRE simplificada para PMEs. Organize finanças, lance transações e veja seu lucro por período.",
+    "url": "https://docs.google.com/spreadsheets/d/1NX94oWWkoT-YBfsOtZzRb1ogxbY2Hv0Y/export?format=xlsx",
+    "type": "excel"
+  },
+  {
+    "id": "checklist-falha-eficiencia-mao-obra-industrial",
+    "name": "Checklist de Falhas na Eficiência da Mão de Obra Industrial",
+    "description": "Checklist prático para identificar falhas e otimizar a produtividade no chão de fábrica industrial.",
+    "url": "https://drive.google.com/file/d/1QvQBZxLbEr3-InP7-5u6xnUimRqsRDFq/view?usp=drive_link",
+    "type": "pdf"
+  }
+]
