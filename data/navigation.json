@@ -3,6 +3,10 @@
     "text": "Soluções",
     "submenu": [
       {
+        "text": "Soluções para PMEs",
+        "url": "pages/pme/"
+      },
+      {
         "text": "Antecipar o Futuro com Inovação",
         "url": "pages/afi/"       
       },

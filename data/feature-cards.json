@@ -331,5 +331,27 @@
         "imageUrl": "/images/feature-card-afi-6.png"
       }
     ]
+  },
+  {
+    "id": "pme",
+    "mainTitle": "Escolha o Melhor Tratamento para o Seu Negócio: Flexibilidade e Resultados",
+    "mainSubtitle": "Como Ajudamos as PMEs",
+    "cards": [
+      {
+        "title": "Acompanhamento Periódico: Alinhamento e Velocidade",
+        "text": "Perfeito para quem busca suporte contínuo e flexibilidade. Neste modelo, realizamos encontros periódicos (à sua escolha) para analisar seus indicadores (financeiros, de gestão, de vendas), monitorar planos de ação e ajustar a rota rapidamente. É o suporte do 'Médico Empresarial' ao seu lado, garantindo que as ações certas sejam tomadas e os resultados acompanhados de perto.",
+        "imageUrl": "/images/feature-card-afi-5.png"
+      },
+      {
+        "title": "Mentoria Estratégica: Guia e Decisões Acertadas",
+        "text": "Ideal para empreendedores que desejam um guia experiente para validar ideias, tomar decisões estratégicas e superar desafios complexos. Você terá acesso direto ao meu conhecimento e visão estratégica em sessões focadas, onde juntos traçaremos os melhores caminhos para o futuro do seu negócio, desenvolvendo sua capacidade de liderar a transformação.",
+        "imageUrl": "/images/feature-card-afi-3.png"
+      },
+      {
+        "title": "Projetos de Melhoria: Soluções Completas e Focadas",
+        "text": "Para desafios específicos que exigem uma intervenção profunda e focada. Com base no seu diagnóstico, vamos implementar soluções completas em áreas como: Gestão Financeira e Rentabilidade, Performance e Gestão de Projetos, Faturamento e Vendas, Estratégia e Governança, dentre outros. Cada projeto é desenhado para entregar resultados mensuráveis e transformar uma área chave do seu negócio.",
+        "imageUrl": "/images/feature-card-afi-6.png"
+      }
+    ]
   }
 ]
