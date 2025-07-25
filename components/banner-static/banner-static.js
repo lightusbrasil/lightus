@@ -28,7 +28,7 @@
                         <div class="banner-static-container">
                             <h1 class="banner-static-title">${selectedBanner.title}</h1>
                             <p class="banner-static-text">${selectedBanner.text}</p>
-                            <a class="banner-static-button" href="${selectedBanner['button-url']}" class="banner-button">${selectedBanner.button}</a>
+                            <a class="banner-static-button" href="${selectedBanner['button-url']}" class="banner-button" target="${selectedBanner['target']}">${selectedBanner.button}</a>
                         </div>
                     </div>
                 </div>
