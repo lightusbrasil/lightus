@@ -6,20 +6,23 @@
     const filesContainer = document.getElementById('files-container');
     const displayNameSpan = document.getElementById('display-user-name');
     const logoutLink = document.querySelector('.logout-btn'); // O botão de logout
-    // downloadLinks será populado após o carregamento dinâmico
-    let downloadLinks = [];
     const filesMessageDiv = document.getElementById('files-message'); // Div para mensagens de feedback
     const excelFilesGrid = document.getElementById('excel-files-grid');
     const pdfFilesGrid = document.getElementById('pdf-files-grid');
+    const businessSegmentSelect = document.getElementById('business-segment-select'); // O select para o segmento
 
     // URL do seu Google Apps Script para rastreamento de downloads e envio de e-mail
     const GOOGLE_APPS_SCRIPT_DOWNLOAD_TRACKING_URL = "https://script.google.com/macros/s/AKfycbzvQpeW5amFcQKT7iUzBTllhXAuNYfsWIBrmFSQbmfvyDk73h7fpLEeUV38nzoH58akvw/exec";
     // URL do arquivo JSON com a lista de arquivos
     const FILES_JSON_URL = "./data/authentication-files-available.json"; // Ajuste o caminho se necessário
+    // URL do arquivo JSON com os tipos de negócio/segmentos
+    const BUSINESS_TYPES_JSON_URL = "./data/business-types.json";
 
     // Variáveis para armazenar o e-mail e nome do usuário logado (serão preenchidas pelo script principal)
     let currentUserEmail = null;
     let currentUserName = null;
+    let allFilesData = []; // Armazenará todos os arquivos carregados
+    let businessTypesData = []; // Armazenará todos os tipos de negócio/segmentos
 
     /**
      * Exibe uma mensagem de feedback para o usuário.
@@ -69,7 +72,7 @@
      */
     function attachDownloadListeners() {
         // Seleciona TODOS os links de download (agora criados dinamicamente)
-        downloadLinks = document.querySelectorAll('.file-link');
+        const downloadLinks = document.querySelectorAll('.file-link');
 
         downloadLinks.forEach(link => {
             link.addEventListener('click', async (e) => {
@@ -142,14 +145,53 @@
     }
 
     /**
-     * Renderiza os arquivos na interface a partir dos dados JSON.
-     * @param {Array} filesData - Array de objetos de arquivo.
+     * Filtra e renderiza os arquivos com base no segmento selecionado.
+     * @param {string} selectedSegmentId - O ID do segmento selecionado (ou 'all' para todos).
      */
-    function renderFiles(filesData) {
+    function filterAndRenderFiles(selectedSegmentId) {
+        let filteredFiles = [];
+
+        if (selectedSegmentId === 'all') {
+            filteredFiles = allFilesData; // Mostra todos os arquivos se 'all' for selecionado
+        } else {
+            // Encontra o tipo de negócio selecionado para verificar seu setor pai, se houver
+            const selectedBusinessType = businessTypesData.find(type => type.id === selectedSegmentId);
+            const parentSectorId = selectedBusinessType ? selectedBusinessType.parent_sector : null;
+
+            filteredFiles = allFilesData.filter(file => {
+                // Se o arquivo está disponível para 'all', ele sempre é mostrado
+                if (file.available_for && file.available_for.includes('all')) {
+                    return true;
+                }
+                // Verifica se o ID do segmento selecionado está na lista de 'available_for' do arquivo
+                if (file.available_for && file.available_for.includes(selectedSegmentId)) {
+                    return true;
+                }
+                // Se um setor pai existe para o segmento selecionado, verifica se o setor pai está na lista
+                if (parentSectorId && file.available_for && file.available_for.includes(parentSectorId)) {
+                    return true;
+                }
+                return false;
+            });
+        }
+        renderFiles(filteredFiles); // Renderiza apenas os arquivos filtrados
+    }
+
+    /**
+     * Renderiza os arquivos na interface a partir dos dados JSON.
+     * @param {Array} filesToRender - Array de objetos de arquivo a serem renderizados.
+     */
+    function renderFiles(filesToRender) {
         excelFilesGrid.innerHTML = ''; // Limpa os grids existentes
         pdfFilesGrid.innerHTML = '';
 
-        filesData.forEach(file => {
+        if (filesToRender.length === 0) {
+            excelFilesGrid.innerHTML = '<p class="no-files-message">Nenhum arquivo disponível para este segmento.</p>';
+            pdfFilesGrid.innerHTML = '<p class="no-files-message">Nenhum arquivo disponível para este segmento.</p>';
+            return;
+        }
+
+        filesToRender.forEach(file => {
             const fileItem = document.createElement('div');
             fileItem.className = 'file-grid-item';
 
@@ -194,45 +236,127 @@
     }
 
     /**
-     * Carrega os dados dos arquivos do arquivo JSON.
+     * Carrega os dados dos arquivos e os tipos de negócio.
      */
-    async function loadFiles() {
+    async function loadAllData() {
         try {
-            console.log(`Carregando arquivos de: ${FILES_JSON_URL}`);
-            const response = await fetch(FILES_JSON_URL);
-            if (!response.ok) {
-                // Se o JSON não for encontrado, exibe um erro mais claro
-                if (response.status === 404) {
-                    throw new Error(`Arquivo JSON não encontrado em ${FILES_JSON_URL}. Verifique o caminho.`);
+            // Carrega os tipos de negócio/segmentos
+            console.log(`loadAllData: Carregando tipos de negócio de: ${BUSINESS_TYPES_JSON_URL}`);
+            const businessTypesResponse = await fetch(BUSINESS_TYPES_JSON_URL);
+            if (!businessTypesResponse.ok) {
+                if (businessTypesResponse.status === 404) {
+                    throw new Error(`Arquivo JSON de tipos de negócio não encontrado em ${BUSINESS_TYPES_JSON_URL}. Verifique o caminho.`);
                 }
-                throw new Error(`Erro ao carregar arquivos: ${response.status} ${response.statusText}`);
+                throw new Error(`Erro ao carregar tipos de negócio: ${businessTypesResponse.status} ${businessTypesResponse.statusText}`);
             }
-            const filesData = await response.json();
-            console.log("Arquivos carregados com sucesso:", filesData);
-            renderFiles(filesData);
+            businessTypesData = await businessTypesResponse.json();
+            console.log("loadAllData: Tipos de negócio carregados com sucesso:", businessTypesData);
+
+            // Popula o select de segmentos
+            populateSegmentSelect();
+
+            // Carrega os dados dos arquivos
+            console.log(`loadAllData: Carregando arquivos de: ${FILES_JSON_URL}`);
+            const filesResponse = await fetch(FILES_JSON_URL);
+            if (!filesResponse.ok) {
+                if (filesResponse.status === 404) {
+                    throw new Error(`Arquivo JSON de arquivos não encontrado em ${FILES_JSON_URL}. Verifique o caminho.`);
+                }
+                throw new Error(`Erro ao carregar arquivos: ${filesResponse.status} ${filesResponse.statusText}`);
+            }
+            allFilesData = await filesResponse.json();
+            console.log("loadAllData: Arquivos carregados com sucesso:", allFilesData);
+
+            // Tenta carregar o segmento salvo do localStorage
+            const savedSegment = localStorage.getItem('selectedBusinessSegment');
+            if (savedSegment && businessTypesData.some(type => type.id === savedSegment)) {
+                businessSegmentSelect.value = savedSegment;
+                console.log(`loadAllData: Segmento '${savedSegment}' carregado do localStorage.`);
+            } else {
+                businessSegmentSelect.value = 'all'; // Padrão para 'Todos os Segmentos'
+                localStorage.setItem('selectedBusinessSegment', 'all');
+                console.log("loadAllData: Nenhum segmento salvo ou inválido, definindo para 'all'.");
+            }
+
+            // Filtra e renderiza os arquivos com base na seleção inicial (ou padrão)
+            filterAndRenderFiles(businessSegmentSelect.value);
+
+            // Adiciona o event listener para o dropdown de segmento APÓS o carregamento de dados
+            businessSegmentSelect.addEventListener('change', (event) => {
+                const selectedSegment = event.target.value;
+                localStorage.setItem('selectedBusinessSegment', selectedSegment); // Salva a seleção
+                filterAndRenderFiles(selectedSegment); // Filtra e renderiza os arquivos
+                console.log(`Segmento alterado para: ${selectedSegment}. Arquivos filtrados.`);
+            });
+
+
         } catch (error) {
-            console.error("Erro ao carregar arquivos JSON:", error);
-            showMessage(`Erro ao carregar a lista de arquivos: ${error.message}. Tente novamente mais tarde.`, 'error');
+            console.error("loadAllData: Erro ao carregar dados JSON:", error);
+            showMessage(`Erro ao carregar dados: ${error.message}. Tente novamente mais tarde.`, 'error');
         }
+    }
+
+    /**
+     * Popula o dropdown de seleção de segmento com os dados carregados.
+     */
+    function populateSegmentSelect() {
+        if (!businessSegmentSelect) {
+            console.error("populateSegmentSelect: businessSegmentSelect não encontrado. Não é possível popular o dropdown.");
+            return;
+        }
+        businessSegmentSelect.innerHTML = ''; // Limpa as opções existentes
+
+        // Adiciona a opção "Todos os Segmentos" primeiro
+        const allOption = document.createElement('option');
+        allOption.value = 'all';
+        allOption.textContent = 'Todos os Segmentos';
+        businessSegmentSelect.appendChild(allOption);
+
+        // Adiciona os setores
+        const sectors = businessTypesData.filter(type => type.type === 'sector');
+        sectors.forEach(sector => {
+            const optgroup = document.createElement('optgroup');
+            optgroup.label = sector.name;
+            businessSegmentSelect.appendChild(optgroup);
+
+            // Adiciona os tipos de negócio que pertencem a este setor
+            const businessTypesInSector = businessTypesData.filter(type => type.parent_sector === sector.id);
+            businessTypesInSector.forEach(bt => {
+                const option = document.createElement('option');
+                option.value = bt.id;
+                option.textContent = bt.name;
+                optgroup.appendChild(option);
+            });
+        });
+
+        // Adiciona tipos de negócio sem setor pai explícito (se houver, embora nossa estrutura atual os tenha)
+        const standaloneBusinessTypes = businessTypesData.filter(type => type.type === 'business_type' && !type.parent_sector);
+        standaloneBusinessTypes.forEach(bt => {
+            const option = document.createElement('option');
+            option.value = bt.id;
+            option.textContent = bt.name;
+            businessSegmentSelect.appendChild(option);
+        });
+        console.log("populateSegmentSelect: Dropdown de segmentos populado.");
     }
 
     // --- Event Listener para receber informações do usuário logado do script principal ---
     window.addEventListener('auth:updateUserInfo', (event) => {
         const { name, email } = event.detail;
         updateUserInfo(name, email);
-        // Carrega os arquivos assim que as informações do usuário estiverem disponíveis
-        loadFiles();
+        // Carrega e filtra os arquivos assim que as informações do usuário estiverem disponíveis
+        loadAllData(); // Agora chama loadAllData para carregar ambos os JSONs
     });
 
     // Log inicial para verificar se o script foi carregado
     console.log("authentication-files-available.js carregado.");
 
-    // *** MUDANÇA AQUI: Tenta carregar os arquivos imediatamente se o usuário já estiver logado ***
+    // Tenta carregar os arquivos imediatamente se o usuário já estiver logado
     // Isso cobre o caso de recarregar a página após o login, onde 'auth:updateUserInfo'
     // pode já ter sido disparado antes de este script estar pronto para ouvi-lo.
     if (currentUserName && currentUserEmail) {
         console.log("Usuário já logado na inicialização do script. Carregando arquivos...");
-        loadFiles();
+        loadAllData(); // Agora chama loadAllData
     } else {
         console.log("Usuário não logado na inicialização do script. Aguardando evento 'auth:updateUserInfo'...");
     }
