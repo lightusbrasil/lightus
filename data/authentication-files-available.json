@@ -22,5 +22,13 @@
     "url": "https://docs.google.com/spreadsheets/d/1FnGATXIAdvKUjgT4lmtZNLSXqe_kEAsc/export?format=xlsx",
     "type": "excel",
     "available_for": ["barbearia"]
+  },
+  {
+    "id": "dashboard-salaobeleza",
+    "name": "Planilha de Controle para seu Salão de Beleza",
+    "description": "Possui DRE e Indicadores para vários setores de seu salão de beleza.",
+    "url": "https://docs.google.com/spreadsheets/d/1sf1Aqw32Va2RXYadwur2TcyHWZ-plScw/export?format=xlsx",
+    "type": "excel",
+    "available_for": ["salao_beleza"]
   }
 ]
